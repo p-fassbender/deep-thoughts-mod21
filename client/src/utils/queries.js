@@ -8,16 +8,16 @@ export const QUERY_THOUGHTS = gql`
       createdAt
       username
       reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
     }
   }
 `;
-
+// removed from query thoughts after reaction count
+// reactions {
+//     _id
+//     createdAt
+//     username
+//     reactionBody
+//   }
 export const QUERY_THOUGHT = gql`
   query thought($id: ID!) {
     thought(_id: $id) {
@@ -26,15 +26,16 @@ export const QUERY_THOUGHT = gql`
       createdAt
       username
       reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
     }
   }
 `;
+// removed from query thoughts after reaction count
+// reactions {
+//     _id
+//     createdAt
+//     username
+//     reactionBody
+//   }
 
 export const QUERY_USER = gql`
   query user($username: String!) {
@@ -69,12 +70,6 @@ export const QUERY_ME = gql`
         thoughtText
         createdAt
         reactionCount
-        reactions {
-          _id
-          createdAt
-          reactionBody
-          username
-        }
       }
       friends {
         _id
@@ -83,6 +78,13 @@ export const QUERY_ME = gql`
     }
   }
 `;
+// removed from query thoughts after reaction count
+// reactions {
+//     _id
+//     createdAt
+//     username
+//     reactionBody
+//   }
 
 export const QUERY_ME_BASIC = gql`
   {
